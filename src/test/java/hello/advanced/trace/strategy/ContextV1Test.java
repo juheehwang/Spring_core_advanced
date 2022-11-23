@@ -46,10 +46,12 @@ public class ContextV1Test {
 
     @Test
     void strategyV3(){
+        //interface 에 메소드가 한개일시 람다로 변경가능
+
         ContextV1 contextV1 = new ContextV1(()->log.info("비즈니스 로직 1 실행"));
         contextV1.execute();
 
-        ContextV1 contextV2 = new ContextV1(()->log.info("비즈니스 로직 1 실행"));
+        ContextV1 contextV2 = new ContextV1(()->log.info("비즈니스 로직 2 실행"));
         contextV2.execute();
     }
 }

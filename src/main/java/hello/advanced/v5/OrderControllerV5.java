@@ -23,12 +23,9 @@ public class OrderControllerV5 {
     public String request(String itemId){
 
         return traceTemplate.execute("OrderController.request()",
-                new TraceCallback<>() {
-            @Override
-            public String call() {
-                orderService.orderItem(itemId);
-                return "ok";
-            }
-        });
+                () -> {
+                    orderService.orderItem(itemId);
+                    return "ok";
+                });
     }
 }
